@@ -3,14 +3,25 @@ import { createIcons, icons } from 'lucide'
 import fondo_principal from './assets/fondo_principal.png'
 import fondo_secundario from './assets/fondo_secundario.png'
 
+import planeta from './assets/planeta.png'
+import meteorito from './assets/meteorito.png'
+import estrella from './assets/estrella.png'
+
+import carpeta_prog from './assets/carpeta_prog.png'
+import carpeta_inter from './assets/carpeta_inter.png'
+import carpeta_apun from './assets/carpeta_apun.png'
+
+import ej_web from './assets/ej_web.webm'
+
+
 
 document.querySelector('#app').innerHTML = `
 <section id="portada">
   <div class="estrellas"></div>
   <div class="text-container">
-    <img class="planeta" src="/src/assets/planeta.png" alt="Imagen de un planeta">
-    <img class="meteorito" src="/src/assets/meteorito.png" alt="Imagen de un meteorito">
-    <img class="estrellaimg" src="/src/assets/estrella.png" alt="Imagen de un estrella">
+    <img class="planeta" src="${planeta}" alt="Imagen de un planeta">
+    <img class="meteorito" src="${meteorito}" alt="Imagen de un meteorito">
+    <img class="estrellaimg" src="${estrella}" alt="Imagen de un estrella">
     <h1>SARA LIGIA BOGDAN</h1>
     <h2>Desarrolladora en constante aprendizaje</h2>
     <p>¡Hola! Soy una persona constante, curiosa y comprometida. </p>
@@ -27,8 +38,8 @@ document.querySelector('#app').innerHTML = `
   <div class="estrellas"></div>
   <div class="contenido-principal">
     <div class="recuadro-container">
-      <img class="estrellaimg2" src="/src/assets/estrella.png" alt="Imagen de un estrella"> 
-      <img class="estrellaimg3" src="/src/assets/estrella.png" alt="Imagen de un estrella">   
+      <img class="estrellaimg2" src="${estrella}" alt="Imagen de un estrella"> 
+      <img class="estrellaimg3" src="${estrella}" alt="Imagen de un estrella">   
       <div class="botones">
         <button class="boton activo">Sobre mí</button>
         <button class="boton">Mi trayectoría</button>
@@ -310,15 +321,15 @@ const contenidos = [
           <div class="carpetas-container">
 
             <div class="carpeta-item">
-                <img class="carpeta-programacion" src="/src/assets/carpeta_prog.png" data-carpeta="programacion">
+                <img class="carpeta-programacion" src="${carpeta_prog}" data-carpeta="programacion">
                 <h4>PROGRAMACIÓN</h4>
             </div>
             <div class="carpeta-item">
-                <img class="carpeta-intereses" src="/src/assets/carpeta_inter.png" data-carpeta="intereses">
+                <img class="carpeta-intereses" src="${carpeta_inter}" data-carpeta="intereses">
                 <h4>INTERESES</h4>
             </div>
             <div class="carpeta-item">
-                <img class="carpeta-apuntes" src="/src/assets/carpeta_apun.png" data-carpeta="apuntes">
+                <img class="carpeta-apuntes" src="${carpeta_apun}" data-carpeta="apuntes">
                 <h4>APUNTES</h4>
             </div>
 
@@ -446,7 +457,7 @@ const carpetasContenido = {
           <p>- Tecnologías de marcado y gestión de información: XML, RSS, XPath, XQuery y XSL.</p>
           <div class="video-container">
               <video controls>
-                  <source src="/src/assets/ej_web.webm" type="video/webm">
+                  <source src="${ej_web}" type="video/webm">
                   Tu navegador no admite la reproducción de vídeo.
               </video>
           </div>

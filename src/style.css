@@ -376,15 +376,15 @@ body {
 }
 
 .carpeta-programacion:hover {
-  content: url("/src/assets/carpeta_prog_abierta.png");
+  content: url("./assets/carpeta_prog_abierta.png");
 }
 
 .carpeta-apuntes:hover{
-  content: url("/src/assets/carpeta_apun_abierta.png");
+  content: url("./assets/carpeta_apun_abierta.png");
 }
 
 .carpeta-intereses:hover{
-  content: url("/src/assets/carpeta_inter_abierta.png");
+  content: url("./assets/carpeta_inter_abierta.png");
 }
 
 .contenido-carpeta {
