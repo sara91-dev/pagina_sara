@@ -47,6 +47,20 @@ document.querySelector('#app').innerHTML = `
 document.querySelector('#portada').style.backgroundImage = `url("${fondo_principal}")`
 document.querySelector('#segunda-seccion').style.backgroundImage = `url("${fondo_secundario}")`
 
+const portada = document.querySelector('#portada');
+
+function cambiarFondoPortada() {
+    if (window.matchMedia('(max-width: 1000px)').matches) {
+        portada.style.backgroundImage = `url("${fondo_secundario}")`;
+    } else {
+        portada.style.backgroundImage = `url("${fondo_principal}")`;
+    }
+}
+
+cambiarFondoPortada();
+
+window.addEventListener('resize', cambiarFondoPortada);
+
 createIcons({ icons })
 
 const botonDescubre = document.querySelector('.text-container .boton');
@@ -380,7 +394,7 @@ const contenidos = [
               alt=""
             >
           </div>
-          <span>Old GitHub</span>
+          <span>GitHub Anterior</span>
         </a>
       </div>
 
