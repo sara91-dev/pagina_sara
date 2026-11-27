@@ -4,7 +4,6 @@ import fondo_principal from './assets/fondo_principal.png'
 import fondo_secundario from './assets/fondo_secundario.png'
 
 
-
 document.querySelector('#app').innerHTML = `
 <section id="portada">
   <div class="estrellas"></div>
@@ -63,8 +62,6 @@ const cielos = document.querySelectorAll('.estrellas');
 
 window.addEventListener('wheel', (event) => {
 
-    // Si estamos encima del contenedor de texto,
-    // dejamos que funcione su scroll interno.
     if (event.target.closest('.contenedor-texto')) {
         return;
     }
@@ -299,15 +296,15 @@ const contenidos = [
           <div class="carpetas-container">
 
             <div class="carpeta-item">
-                <img class="carpetas" src="/src/assets/carpeta_prog.png" data-carpeta="web">
+                <img class="carpeta-programacion" src="/src/assets/carpeta_prog.png" data-carpeta="programacion">
                 <h4>PROGRAMACIÓN</h4>
             </div>
             <div class="carpeta-item">
-                <img class="carpetas" src="/src/assets/carpeta_inter.png" data-carpeta="programacion">
+                <img class="carpeta-intereses" src="/src/assets/carpeta_inter.png" data-carpeta="intereses">
                 <h4>INTERESES</h4>
             </div>
             <div class="carpeta-item">
-                <img class="carpetas" src="/src/assets/carpeta_prog.png" data-carpeta="intereses">
+                <img class="carpeta-apuntes" src="/src/assets/carpeta_apun.png" data-carpeta="apuntes">
                 <h4>APUNTES</h4>
             </div>
 
@@ -405,7 +402,7 @@ const contenidos = [
 ];
 
 const carpetasContenido = {
-    web: `
+    programacion: `
         <div class="programacion-apartado">
           <p>Durante mi formación en Desarrollo de Aplicaciones Multiplataforma (DAM) he adquirido conocimientos en diferentes áreas del desarrollo de software, diseño y gestión de proyectos.</p>
           <div class="separador"></div>
@@ -494,12 +491,12 @@ const carpetasContenido = {
         
     `,
 
-    programacion: `
+    intereses: `
         <h3>MIS INTERESES</h3>
         <p>Aquí se verán cosas relacionadas con mis intereses (crochet, dibujos, etc).</p>
     `,
 
-    intereses: `
+    apuntes: `
         <h3>MIS APUNTES</h3>
         <p>Aquí se verán apuntes que he hecho sobre temas que me interesan (cursos, libros, etc).</p>
     `
@@ -508,15 +505,12 @@ const carpetasContenido = {
 botones.forEach((boton, indice) => {
   boton.addEventListener('click', () => {
 
-    // Actualizar el botón seleccionado
     botones.forEach((b) => {
       b.classList.remove('activo');
     });
 
     boton.classList.add('activo');
 
-    // Mostrar el contenido correspondiente
-    // Mostrar el contenido correspondiente
     contenedor.innerHTML = contenidos[indice].html;
     createIcons({ icons });
 
@@ -532,9 +526,10 @@ botones.forEach((boton, indice) => {
 });
 
 
+
 function activarCarpetas() {
 
-    const carpetas = contenedor.querySelectorAll('.carpetas');
+    const carpetas = contenedor.querySelectorAll('.carpeta-item img[data-carpeta]');
     const vistaCarpetas = contenedor.querySelector('.vista-carpetas');
     const vistaProyecto = contenedor.querySelector('.vista-proyecto');
 
@@ -544,18 +539,12 @@ function activarCarpetas() {
 
             const tipo = carpeta.dataset.carpeta;
 
-            // Ocultamos las carpetas
             vistaCarpetas.classList.add('desaparecer');
 
             setTimeout(() => {
 
                 vistaCarpetas.style.display = 'none';
 
-                // Preparamos de nuevo la pantalla del proyecto
-                vistaProyecto.classList.remove('aparecer');
-                vistaProyecto.style.display = 'block';
-
-                // Cargamos el contenido de la carpeta seleccionada
                 vistaProyecto.innerHTML = `
                     ${carpetasContenido[tipo]}
 
@@ -564,10 +553,12 @@ function activarCarpetas() {
                     </button>
                 `;
 
-                // Mostramos la pantalla
+                vistaProyecto.style.display = 'block';
+
+                vistaProyecto.classList.remove('aparecer');
+                void vistaProyecto.offsetWidth;
                 vistaProyecto.classList.add('aparecer');
 
-                // Botón para regresar
                 const botonVolver = vistaProyecto.querySelector('.volver-proyectos');
 
                 botonVolver.addEventListener('click', () => {
@@ -575,38 +566,37 @@ function activarCarpetas() {
                     vistaProyecto.classList.remove('aparecer');
                     vistaProyecto.style.display = 'none';
 
-                    // Recuperamos las carpetas
-                    vistaCarpetas.style.display = 'flex';
-                    vistaCarpetas.style.flexDirection = 'column';
-                    vistaCarpetas.style.alignItems = 'center';
+                    vistaCarpetas.style.removeProperty('display');
                     vistaCarpetas.classList.remove('desaparecer');
+
+                    contenedor.scrollTop = 0;
 
                 });
 
-            }, 400);
+            }, 300);
 
         });
 
     });
 }
 
-// Mostrar el primer contenido al cargar la página
+
 contenedor.innerHTML = contenidos[0].html;
 
 function activarMostrarMas() {
 
-  const botonMas = contenedor.querySelector('.mostrar-mas');
-  const textoOculto = contenedor.querySelector('.texto-oculto');
+    const botonMas = contenedor.querySelector('.mostrar-mas');
+    const textoOculto = contenedor.querySelector('.texto-oculto');
 
-  botonMas.addEventListener('click', () => {
+    botonMas.addEventListener('click', () => {
 
-    textoOculto.classList.toggle('visible');
+      textoOculto.classList.toggle('visible');
 
-    botonMas.classList.toggle('girada');
+      botonMas.classList.toggle('girada');
 
-  });
+    });
 
-  createIcons({ icons });
+    createIcons({ icons });
 }
 
 activarMostrarMas();

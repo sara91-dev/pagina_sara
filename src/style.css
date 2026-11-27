@@ -1,951 +1,475 @@
+
 html {
-
   scroll-behavior: smooth;
-
   scroll-snap-type: y mandatory;
-
 }
-
-
 
 body {
-
   min-height: 100vh;
-
   margin: 0;
-
-
-
 }
-
-
 
 .planeta {
-
   width: 75px;
-
   height: 75px;
-
   object-fit: contain;
-
   position: absolute;
-
   top: -20px;
-
   right: -35px;
-
   opacity: 0.8;
-
 }
-
-
-
-
 
 .meteorito {
-
   width: 65px;
-
   height: 65px;
-
   object-fit: contain;
-
   position: absolute;
-
   top: 50px;
-
   left: -27.5px;
-
   opacity: 0.8;
-
 }
-
-
 
 .estrellaimg {
-
   width: 50px;
-
   height: 50px;
-
   object-fit: contain;
-
   position: absolute;
-
   top: 280px;
-
   right: 70px;
-
-
-
 }
-
-
-
-
 
 @keyframes brillar {
-
   0%, 100% {
-
     opacity: 0;
-
     transform: scale(0.5);
-
   }
-
-
-
   50% {
-
     opacity: 1;
-
     transform: scale(1.5);
-
   }
-
 }
-
-
 
 @keyframes flotar {
-
   0%, 100% {
-
     transform: translateY(0);
-
   }
-
-
-
   50% {
-
     transform: translateY(-4px);
-
   }
-
 }
-
-
 
 #portada,
-
 #segunda-seccion {
-
   position: relative;
-
 }
-
-
 
 #portada,
 .contenido-principal {
-
   width: 100%;
-
   min-height: 100vh;
-
   box-sizing: border-box;
-
   scroll-snap-align: start;
-
   scroll-snap-stop: always;
-
 }
-
-
 
 #portada {
-
   background-position: center;
-
   background-repeat: no-repeat;
-
   background-size: 100% 100%;
-
-
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   height: 100vh;
-
 }
-
-
 
 .estrellas {
-
   position: absolute;
-
   inset: 0;
-
   pointer-events: none;
-
   overflow: hidden;
-
   z-index: 1;
-
 }
-
-
 
 .estrella {
-
   position: absolute;
-
   width: 1.5px;
-
   height: 1.5px;
-
   background-color: white;
-
   border-radius: 50%;
-
-
-
   box-shadow: 0 0 4px rgba(180, 200, 255, 0.9);
-
-
-
   animation: brillar 3s ease-in-out infinite;
-
 }
-
-
-
-
 
 .text-container {
-
   position: relative;
-
   font-family: 'Arial', sans-serif;
-
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-
   right: -400px;
-
   text-align: center;
-
   background-color: rgba(255, 255, 255, 0.2);
-
   padding: 30px 50px 37.5px 50px;
-
   border-radius: 20px;
-
   box-shadow: 2.5px 4px 7.5px rgba(0, 0, 0, 0.4);
-
   border: 1px solid rgba(255, 255, 255, 0.3);
-
-
-
 }
-
-
 
 .text-container h1 {
-
   font-size: 2em;
-
   margin: 0 0 5px 0;
-
   letter-spacing: 1.5px;
-
   font-family: "Tiny5 Duo", sans-serif;
-
   font-weight: 400;
-
   color: rgba(255, 0, 200, 1);
-
   text-shadow: 0 0 5px rgba(255, 0, 200, 0.7),
-
                0 0 12.5px rgba(255, 0, 200, 0.5);
-
 }
-
-
 
 .text-container h2 {
-
   font-size: 15px;
-
   margin: 0 0 30px 0;
-
   letter-spacing: 4px;
-
   font-weight: 500;
-
   color: rgba(243, 158, 220, 0.8);
-
   font-family: "Fredoka", sans-serif;
-
 }
-
-
 
 .text-container p {
-
   color: rgba(228, 221, 255, 0.8);
-
   font-size: 14px;
-
   margin: 9px 0 0 0;
-
   letter-spacing: 2.5px;
-
   font-weight: 500;
-
   font-family: "Quicksand", sans-serif;
-
 }
-
-
 
 .text-container button {
-
   margin-top: 45px;
-
 }
-
-
 
 .text-container,
-
 .contenido-principal,
-
 .flecha-container {
-
   position: relative;
-
   z-index: 2;
-
 }
-
-
 
 .flecha-container {
-
   position: absolute;
-
   bottom: 12.5px;
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
-
-
   background-color: rgba(255, 255, 255, 0.2);
-
   opacity: 1;
-
-
-
   padding: 7.5px;
-
   margin: 5px;
-
   border-radius: 20px;
-
   box-shadow: 2.5px 4px 7.5px rgba(0, 0, 0, 0.6);
-
   cursor: pointer;
-
   animation: flotar 2s ease-in-out infinite;
-
   border: 1px solid rgba(255, 255, 255, 0.3);
-
 }
-
-
 
 .flecha {
-
   width: 25px;
-
   height: 25px;
-
   color: rgba(244, 44, 190, 0.8);
-
   opacity: 1;
-
   stroke-width: 3;
-
 }
-
-
 
 #segunda-seccion {
-
   width: 100%;
-
   min-height: 100vh;
-
-
-
   background-position: center;
-
   background-repeat: no-repeat;
-
   background-size: 100% 100%;
-
-
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
-
-
   scroll-snap-align: start;
-
   scroll-snap-stop: always;
-
 }
-
-
 
 .contenido-principal {
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
-
-
   width: 100%;
-
   min-height: 100vh;
-
 }
-
-
 
 .recuadro-container {
-
   position: relative;
-
   width: 60%;
-
   height: 70vh;
-
   box-sizing: border-box;
-
   border-radius: 20px;
-
   align-items: center;
-
-
-
   background-color: rgba(0, 0, 0, 0.4);
-
   padding: 45px 50px 45px;
-
   margin: 10px;
-
   display: flex;
-
   flex-direction: column;
-
 }
-
-
 
 .botones {
-
   display: flex;
-
   justify-content: center;
-
   gap: 65px;
-
   margin-bottom: 45px;
-
 }
-
-
 
 .boton {
-
   background-color: rgba(255, 255, 255, 0.3);
-
   border: none;
-
   padding: 8.5px 17.5px;
-
   font-size: 12.5px;
-
   letter-spacing: 2px;
-
   border-radius: 15px;
-
   cursor: pointer;
-
   font-weight: 550;
-
   box-shadow: 2.5px 4px 7.5px rgba(0, 0, 0, 0.4);
-
   color: #ffffff;
-
   font-family: "Fredoka", sans-serif;
-
-
-
   transition:
-
   background-color 0.4s ease,
-
   transform 0.4s ease,
-
   box-shadow 0.4s ease;
-
 }
-
-
 
 .boton:hover {
-
   background-color: rgba(87, 70, 174, 0.8);
-
   transform: translateY(-2px);
-
   box-shadow: 2.5px 5px 10px rgba(0, 0, 0, 0.5);
-
   border: 1px solid rgba(255, 255, 255, 0.5);
-
 }
-
-
 
 .boton.activo {
-
   background-color: rgba(49, 38, 105, 0.8);
-
   box-shadow: 0 0 7.5px rgba(87, 70, 174, 0.8);
-
   transform: translateY(-2px);
-
 }
-
-
 
 .boton.activo:hover {
-
   box-shadow: 0 0 7.5px rgba(120, 105, 195, 0.8);
-
 }
-
-
-
-
-
-
 
 .estrellaimg2 {
-
   width: 60px;
-
   height: 60px;
-
   object-fit: contain;
-
   position: absolute;
-
   top: -25px;
-
   right: 20px;
-
 }
-
-
 
 .estrellaimg3 {
-
   width: 60px;
-
   height: 60px;
-
   object-fit: contain;
-
   position: absolute;
-
   top: -25px;
-
   left: 20px;
-
 }
-
-
 
 .contenedor-texto {
-
   text-align: center;
-
   justify-content: center;
-
   color: #ffffff;
-
   border: 1px solid rgba(255, 255, 255, 0.3);
-
   background-color: rgba(255, 255, 255, 0.2);
-
   width: 80%;
-
   height: 70vh;
-
   padding: 10px;
-
   border-radius: 20px;
-
   box-sizing: border-box;
-
   box-shadow: 2.5px 4px 7.5px rgba(0, 0, 0, 0.4);
-
-
-
   margin-top: auto;
-
   margin-bottom: auto;
-
-
-
   overflow-y: auto;
-
   overflow-x: hidden;
-
   scrollbar-gutter: stable;
-
-}  
-
-
+}
 
 .contenedor-texto h2 {
-
   font-size: 30px;
-
   margin-top: 30px;
-
   letter-spacing: 5px;
-
   font-family: "Tiny5 Duo", sans-serif;
-
   font-weight: 500;
-
   color: rgba(255, 0, 200, 1);
-
   text-shadow: 0 0 5px rgba(255, 0, 200, 0.7),
-
                0 0 12.5px rgba(255, 0, 200, 0.5);
-
 }
-
-
-
-
 
 .contenedor-texto h3:first-of-type {
-
   margin-top: 50px;
-
 }
-
-
 
 .contenedor-texto h3 {
-
   font-size: 14px;
-
   margin-top: 20px;
-
   letter-spacing: 3px;
-
   font-weight: 500;
-
   font-family: "Fredoka", sans-serif;
-
   color: rgba(243, 158, 220, 0.8);
-
 }
-
-
 
 .contenedor-texto sobre-mi trayectoria vista-carpetas p:first-of-type {
-
   margin: 25px 10px 5px;
-
 }
-
-
 
 .contenedor-texto p:last-of-type {
-
   margin-bottom: 35px;
-
 }
-
-
 
 .contenedor-texto p {
-
   font-size: 13px;
-
   margin: 30px 10px 5px;
-
   letter-spacing: 2.5px;
-
   font-weight: 500;
-
   font-family: "Quicksand", sans-serif;
-
   overflow-wrap: anywhere;
-
   color: rgba(228, 221, 255, 0.9);
-
 }
-
-
 
 .separador {
-
-    width: 80%;
-
-    height: 1px;
-
-    background-color: rgba(228, 221, 255);
-
-    margin: 50px auto 25px;
-
-    border-radius: 5px;
-
+  width: 80%;
+  height: 1px;
+  background-color: rgba(228, 221, 255);
+  margin: 50px auto 25px;
+  border-radius: 5px;
 }
-
-
 
 .contenedor-texto::-webkit-scrollbar {
-
-    width: 4px;
-
+  width: 4px;
 }
-
-
 
 .contenedor-texto::-webkit-scrollbar-track {
-
-    background: transparent;
-
-    margin-top: 17.5px;
-
-    margin-bottom: 17.5px;
-
+  background: transparent;
+  margin-top: 17.5px;
+  margin-bottom: 17.5px;
 }
-
-
 
 .contenedor-texto::-webkit-scrollbar-thumb {
-
-    background: rgba(244, 44, 190, 0.8);
-
-    border-radius: 5px;
-
+  background: rgba(244, 44, 190, 0.8);
+  border-radius: 5px;
 }
-
-
 
 .contenedor-texto::-webkit-scrollbar-thumb:hover {
-    background: rgba(235, 131, 207, 0.8);
-
+  background: rgba(235, 131, 207, 0.8);
 }
 
-
-
-.carpetas-container {
-
-    display: flex;
-
-    flex-direction: row;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 85px;
-
-    margin: 65px;
-
-    margin-bottom: 70px;
-
-    flex: 1;
-
+.carpeta-programacion, .carpeta-intereses, .carpeta-apuntes {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-
-
-.carpetas {
-
-    width: 150px;
-
-    height: 150px;
-
-    object-fit: contain;
-
-    cursor: pointer;
-
-    transition: transform 0.3s ease;
-
+.carpeta-programacion:hover,
+.carpeta-intereses:hover,
+.carpeta-apuntes:hover {
+  transform: scale(1.1);
 }
 
-
-
-.carpetas:hover {
-
-    transform: scale(1.1);
-
+.carpeta-programacion:hover {
+  content: url("/src/assets/carpeta_prog_abierta.png");
 }
 
+.carpeta-apuntes:hover{
+  content: url("/src/assets/carpeta_apun_abierta.png");
+}
 
+.carpeta-intereses:hover{
+  content: url("/src/assets/carpeta_inter_abierta.png");
+}
 
 .contenido-carpeta {
-
-    width: 80%;
-
-    margin: 40px auto;
-
-    color: white;
-
-    text-align: center;
-
+  width: 80%;
+  margin: 40px auto;
+  color: white;
+  text-align: center;
 }
-
-
-
-*/* Pantalla inicial de las carpetas */*
 
 .vista-carpetas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
 }
 
+.vista-carpetas h2 {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0;
+}
 
-
-*/* Desaparición de las carpetas */*
+.carpetas-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 85px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 65px 0;
+  flex: none;
+}
 
 .vista-carpetas.desaparecer {
-
-    opacity: 0;
-
-    transform: scale(0.95);
-
+  opacity: 0;
+  transform: scale(0.95);
 }
-
-
-
-*/* Nueva pantalla */*
 
 .vista-proyecto {
-
-    display: none;
-
-    opacity: 0;
-
-    transform: translateY(7.5px);
-
+  display: none;
+  opacity: 0;
+  transform: translateY(7.5px);
 }
-
-
-
-*/* Aparición de la nueva pantalla */*
 
 .vista-proyecto.aparecer {
-
-    display: block;
-
-    animation: aparecerProyecto 0.5s ease forwards;
-
+  display: block;
+  animation: aparecerProyecto 0.5s ease forwards;
 }
-
 
 
 @keyframes aparecerProyecto {
 
-    from {
-
-        opacity: 0;
-
-        transform: translateY(7.5px);
-
-    }
-
-
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-    }
-
+  from {
+    opacity: 0;
+    transform: translateY(7.5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 
 .carpeta-item {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
-
 
 .carpeta-item p {
-
-    font-size: 9px;
-
+  font-size: 9px;
 }
-
-
 
 h4 {
-
   font-size: 12.5px;
-
   letter-spacing: 3px;
-
   font-weight: 600;
-
   font-family: "Fredoka", sans-serif;
-
   margin-top: 0px;
-
   color:rgba(255, 255, 255, 0.6);
-
 }
-
-
-
-*/* Sección de contacto */*
-
-
-
-/* Sección de contacto */
 
 .contacto {
   width: 100%;
@@ -960,8 +484,6 @@ h4 {
 .contacto h2 {
   margin-bottom: 35px;
 }
-
-/* Cuadrícula */
 
 .contacto .redes-grid {
   display: grid;
@@ -982,8 +504,6 @@ h4 {
     0 0 25px rgba(220, 90, 160, 0.45);
 }
 
-/* Cada enlace */
-
 .contacto .red-social {
   display: flex;
   flex-direction: column;
@@ -997,8 +517,6 @@ h4 {
   transition: transform 0.3s ease;
 }
 
-/* Nombre de la red */
-
 .contacto .redes-grid .red-social span {
   margin: 0px;
   font-size: 12px;
@@ -1006,8 +524,6 @@ h4 {
   letter-spacing: 0.5px;
   text-align: center;
 }
-
-/* Fondo del icono */
 
 .contacto .icono-red {
   width: 60px;
@@ -1024,8 +540,6 @@ h4 {
     box-shadow 0.3s ease;
 }
 
-/* Imagen dentro del icono */
-
 .contacto .icono-red img,
 .contacto .red-social img {
   display: block;
@@ -1036,14 +550,10 @@ h4 {
   object-fit: contain;
 }
 
-/* Por si el propio icono es una imagen */
-
 .contacto img.icono-red {
   width: 60px;
   height: 60px;
 }
-
-/* Colores de cada red */
 
 .contacto .instagram {
   background: linear-gradient(
@@ -1072,8 +582,6 @@ h4 {
   cursor: pointer;
 }
 
-/* Interacción */
-
 .contacto .red-social:hover {
   transform: translateY(-2.5px);
 }
@@ -1089,7 +597,6 @@ h4 {
   border-radius: 10px;
 }
 
-/* Adaptación a pantallas pequeñas */
 
 @media (max-width: 700px) {
   .contacto {
@@ -1119,8 +626,6 @@ h4 {
     font-size: 9.5px;
   }
 }
-
-/* Red deshabilitada */
 
 .contacto .red-social.deshabilitada {
   cursor: not-allowed;
@@ -1155,7 +660,6 @@ h4 {
   display: flex;
   justify-content: center;
   margin-top: 25px;
-
 }
 
 .apartado-tel {
@@ -1178,108 +682,72 @@ h4 {
   margin-bottom: 15px !important;
 }
 
-
-
-
 .info_ayun p:first-of-type {
-
   margin-top: 25px;
-
 }
-
-
 
 .info_ayun p{
-
   margin-top: 10px;
-
 }
-
-
 
 .programacion-apartado p:first-of-type {
-
   margin-top: 40px !important;
-
 }
-
-
 
 .programacion-apartado h3 {
-
   margin-top: 30px !important;
-
 }
-
-
 
 .programacion-apartado p {
-
   margin-top: 15px !important;
-
 }
 
-
-
 .programacion-apartado h3 {
-
   margin-bottom: 30px !important;
-
 }
 
 #segunda-seccion .contenedor-texto .vista-proyecto button.volver-proyectos {
-    all: unset;
-
-    display: block;
-    margin: 20px auto 35px;
-    padding: 8px 18px;
-    margin-top: 35px;
-
-    border: 1px solid rgba(244, 44, 190, 0.8);
-    border-radius: 15px;
-
-    background-color: white;
-    color: rgb(250, 179, 216);
-
-    font-family: "Fredoka", sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 1px;
-
-    cursor: pointer;
-    transition: 0.3s ease;
+  all: unset;
+  display: block;
+  margin: 20px auto 35px;
+  padding: 8px 18px;
+  margin-top: 35px;
+  border: 1px solid rgba(244, 44, 190, 0.8);
+  border-radius: 15px;
+  background-color: white;
+  color: rgb(250, 179, 216);
+  font-family: "Fredoka", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 #segunda-seccion .contenedor-texto .vista-proyecto button.volver-proyectos:hover {
-    background-color: rgb(250, 179, 216);
-    color: white;
-    transform: translateY(-1.5px);
+  background-color: rgb(250, 179, 216);
+  color: white;
+  transform: translateY(-1.5px);
 }
 
 .video-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 40px auto;
 }
 
 .video-container video {
-    width: 100%;
-    max-width: 650px;
-    height: auto;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 
-/* =========================================
-   RESPONSIVE - TABLETS
-========================================= */
-
 @media (max-width: 1000px) {
-
-  /* PORTADA */
 
   .text-container {
     right: 0;
@@ -1301,8 +769,6 @@ h4 {
     letter-spacing: 1.5px;
   }
 
-  /* SEGUNDA SECCIÓN */
-
   .recuadro-container {
     width: 85%;
     padding: 35px 25px;
@@ -1317,24 +783,17 @@ h4 {
     width: 95%;
   }
 
-  /* CARPETAS */
-
   .carpetas-container {
     gap: 35px;
     margin: 35px 15px;
   }
 
-  .carpetas {
+  .carpeta-programacion, .carpeta-intereses, .carpeta-apuntes {
     width: 125px;
     height: 125px;
   }
-
 }
 
-
-/* =========================================
-   RESPONSIVE - MÓVILES
-========================================= */
 
 @media (max-width: 700px) {
 
@@ -1345,8 +804,6 @@ h4 {
   body {
     overflow-x: hidden;
   }
-
-  /* PORTADA */
 
   #portada {
     min-height: 100svh;
@@ -1411,8 +868,6 @@ h4 {
     bottom: 10px;
   }
 
-  /* SEGUNDA SECCIÓN */
-
   #segunda-seccion {
     min-height: 100svh;
     height: auto;
@@ -1439,8 +894,6 @@ h4 {
     border-radius: 15px;
   }
 
-  /* BOTONES DE NAVEGACIÓN */
-
   .botones {
     width: 100%;
     display: grid;
@@ -1456,8 +909,6 @@ h4 {
     font-size: 11px;
     letter-spacing: 1px;
   }
-
-  /* CONTENEDOR DEL CONTENIDO */
 
   .contenedor-texto {
     width: 100%;
@@ -1498,8 +949,6 @@ h4 {
     margin: 30px auto 20px;
   }
 
-  /* ESTRELLAS DECORATIVAS */
-
   .estrellaimg2,
   .estrellaimg3 {
     width: 40px;
@@ -1515,8 +964,6 @@ h4 {
     left: 5px;
   }
 
-  /* CARPETAS */
-
   .carpetas-container {
     display: flex;
     flex-wrap: wrap;
@@ -1525,7 +972,7 @@ h4 {
     margin: 35px 5px;
   }
 
-  .carpetas {
+  .carpeta-programacion, .carpeta-intereses, .carpeta-apuntes {
     width: 90px;
     height: 90px;
   }
@@ -1534,8 +981,6 @@ h4 {
     font-size: 10px;
     letter-spacing: 1.5px;
   }
-
-  /* CONTENIDO DE LAS CARPETAS */
 
   .programacion-apartado p:first-of-type {
     margin-top: 20px !important;
@@ -1549,7 +994,7 @@ h4 {
     margin-top: 25px !important;
     margin-bottom: 20px !important;
   }
-
+  
   .vista-proyecto {
     width: 100%;
     box-sizing: border-box;
@@ -1559,14 +1004,10 @@ h4 {
     width: 100%;
   }
 
-  /* BOTÓN VOLVER */
-
   #segunda-seccion .contenedor-texto .vista-proyecto button.volver-proyectos {
     margin: 25px auto;
     font-size: 12px;
   }
-
-  /* CONTACTO */
 
   .contacto {
     padding: 10px 5px 20px;
@@ -1608,16 +1049,10 @@ h4 {
   .valor {
     font-size: 12px !important;
   }
-
 }
 
 
-/* =========================================
-   RESPONSIVE - MÓVILES PEQUEÑOS
-========================================= */
-
 @media (max-width: 400px) {
-
   .text-container {
     padding: 25px 13px;
   }
@@ -1663,9 +1098,8 @@ h4 {
     letter-spacing: 0.3px;
   }
 
-  .carpetas {
+  .carpeta-programacion, .carpeta-intereses, .carpeta-apuntes {
     width: 75px;
     height: 75px;
   }
-
 }
